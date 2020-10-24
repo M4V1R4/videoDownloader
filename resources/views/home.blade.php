@@ -4,10 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="col-md">
+            <div class="col-md-20">
                 <h4>Enter the url to download!</h4>
                 <div class="input-group">
                     <input type="text" class="form-control" aria-label="Text input with dropdown button">
+
                     <div class="input-group-append">
                         <select class="selectpicker" >
                             <option>MP4</option>

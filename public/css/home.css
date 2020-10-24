@@ -37,3 +37,7 @@ select{
 input{
     background-color: whitesmoke !important;
 }
+
+.btn-danger{
+    width: 40%;
+}
