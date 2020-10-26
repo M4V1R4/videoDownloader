@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Erica+One);body{
+    background-image: url("../image/fondo.jpg");
+  }
+
+thead{
+  background-color: #465561 !important;  
+}
+table{
+    background-color:rgba(0, 0, 0, 0.3) !important;
+    border-color: #465561;
+    width: 75% !important;
+    margin-top: 50px !important;
+}
+
+h4{
+    color: whitesmoke;
+    font-weight: bold;
+}
+.btn-success{
+    margin-left: 115% !important;
+    margin-top: -5%;
+    width: 18%;
+}
+.input-group{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+select{
+    height: calc(1.6em + 0.75rem + 2px);
+    color: #495057;
+    background-color: whitesmoke;
+    border: 1px solid #ced4da;
+    border-radius: 0.20rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+   
+}
+input{
+    background-color: whitesmoke !important;
+}
+
+.btn-danger{
+    width: 40%;
+}
