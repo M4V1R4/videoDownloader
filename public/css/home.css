@@ -16,7 +16,7 @@ h4{
     color: whitesmoke;
     font-weight: bold;
 }
-.btn-success{
+#agregar{
     margin-left: 115% !important;
     margin-top: -5%;
     width: 18%;
@@ -39,5 +39,9 @@ input{
 }
 
 .btn-danger{
+    width: 40%;
+}
+
+.btn-success{
     width: 40%;
 }
