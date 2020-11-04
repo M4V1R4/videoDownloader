@@ -8,7 +8,7 @@
                 <h4>Enter the url to download!</h4>
                
                 
-            <form action="{{ route('urls.store') }}" method="POST">
+            <form action="{{ route('colas.store') }}" method="POST">
 
             @csrf
                 <div class="input-group">
@@ -49,25 +49,25 @@
             <tr>
             <tbody>
             
-                @foreach($urls  as $url)
+                @foreach($colas  as $cola)
                 
                
                         
 
-                    <td name='id'>{{$url->id }}</td>
+                    <td name='id'>{{$cola->id }}</td>
 
-                    <td name='url'>{{$url->url  }}</td>
-                    <td>{{$url->state  }}</td>
-                    <td name='format'>{{$url->format  }}</td>
+                    <td name='url'>{{$cola->url  }}</td>
+                    <td>{{$cola->state  }}</td>
+                    <td name='format'>{{$cola->format  }}</td>
 
-                    <td><form method="POST" class="form-delete" action="{{ route('urls.destroy',$url->id)}}">
+                    <td><form method="POST" class="form-delete" action="{{ route('colas.destroy',$cola->id)}}">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                        
                     </form>
 
-                    <td><form method="POST" class="form-enviar" action="{{ route('cola.store', ['id' => $url->id,'url' => $url->url,'format' => $url->format])}}">
+                    <td><form method="POST" class="form-enviar" action="{{ route('cola.store', ['id' => $cola->id,'url' => $cola->url,'format' => $cola->format])}}">
                     @csrf
                     <button type="submit" class="btn btn-success"><i class="fa fa-download"></i></button>
                        

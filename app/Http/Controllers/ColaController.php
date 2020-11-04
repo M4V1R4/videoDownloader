@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Url;
+use App\Cola;
 use Illuminate\Http\Request;
 Use App;
 use App\Http\Controllers\Auth;
 
-class UrlsController extends Controller
+class ColaController extends Controller
 {
 
     public function __construct()
@@ -22,9 +22,9 @@ class UrlsController extends Controller
     public function index() {
 
         $id = auth()->user()->id;
-        $urls =Url::All();
-        $urls = Url::where('user_id', $id)->get();
-        return view('home', compact('urls'));
+        $colas =Cola::All();
+        $colas = Cola::where('user_id', $id)->get();
+        return view('home', compact('colas'));
 
         
         
@@ -49,12 +49,12 @@ class UrlsController extends Controller
      */
     public function store(Request $request)
     {
-        $nuevoUrl = new Url;
-        $nuevoUrl->url = $request->url;
-        $nuevoUrl->user_id = auth()->user()->id;
-        $nuevoUrl->format = $request->format;
-        $nuevoUrl->state = 'Procesado';
-        $nuevoUrl->save();
+        $nuevoCola = new Cola;
+        $nuevoCola->url = $request->url;
+        $nuevoCola->user_id = auth()->user()->id;
+        $nuevoCola->format = $request->format;
+        $nuevoCola->state = 'Procesado';
+        $nuevoCola->save();
         return back();
 
                         
@@ -63,10 +63,10 @@ class UrlsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Urls  $urls
+     * @param  \App\Colas  $Colas
      * @return \Illuminate\Http\Response
      */
-    public function show(Urls $urls)
+    public function show(Colas $Colas)
     {
         //
     }
@@ -74,10 +74,10 @@ class UrlsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Urls  $urls
+     * @param  \App\Colas  $Colas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Urls $urls)
+    public function edit(Colas $Colas)
     {
         //
     }
@@ -86,12 +86,12 @@ class UrlsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Urls  $urls
+     * @param  \App\Colas  $Colas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Url $urls)
+    public function update(Request $request, Cola $Colas)
     {
-        $model = Url::where('id', $id)->get()[0];
+        $model = Cola::where('id', $id)->get()[0];
         $model->state = $request->state;
         $model->update();
        
@@ -100,13 +100,13 @@ class UrlsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Urls  $urls
+     * @param  \App\Colas  $Colas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Url $url)
+    public function destroy(Cola $Cola)
     {
     
-        $url->delete();
+        $Cola->delete();
         return back();
     }
 }

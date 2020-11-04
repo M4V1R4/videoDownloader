@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Url;
+use App\Cola;
 Use App;
 use App\Http\Controllers\Auth;
 
@@ -27,9 +27,9 @@ class HomeController extends Controller
     public function index()
     {
         $id = auth()->user()->id;
-        $urls =Url::All();
-        $urls = Url::where('user_id', $id)->get();
-        return view('home', compact('urls'));
+        $colas =Cola::All();
+        $colas = Cola::where('user_id', $id)->get();
+        return view('home', compact('colas'));
     }
 
 }

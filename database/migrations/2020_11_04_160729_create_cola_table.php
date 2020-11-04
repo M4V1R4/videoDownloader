@@ -13,7 +13,7 @@ class CreateColaTable extends Migration
      */
     public function up()
     {
-        Schema::create('cola', function (Blueprint $table) {
+        Schema::create('colas', function (Blueprint $table) {
             $table->id();
             $table->string('url');
             $table->string('user_id');
@@ -29,6 +29,6 @@ class CreateColaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cola');
+        Schema::dropIfExists('colas');
     }
 }
