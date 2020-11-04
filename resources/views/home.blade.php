@@ -16,10 +16,10 @@
 
                     <div class="input-group-append">
                         <select name='format' id='format' class="selectpicker" >
-                            <option>MP4</option>
-                            <option>MKV</option>
-                            <option>WEBM</option>
-                            <option>FLV</option>
+                            <option>mp4</option>
+                            <option>mkv</option>
+                            <option>webm</option>
+                            <option>flv</option>
                         </select>
                         
                     </div>
