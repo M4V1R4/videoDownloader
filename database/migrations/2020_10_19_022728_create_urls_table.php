@@ -13,7 +13,11 @@ class CreateUrlsTable extends Migration
      */
     public function up()
     {
+<<<<<<< HEAD:database/migrations/2020_10_19_022728_create_urls_table.php
         Schema::create('urls', function (Blueprint $table) {
+=======
+        Schema::create('colas', function (Blueprint $table) {
+>>>>>>> vlkw:database/migrations/2020_11_04_160729_create_cola_table.php
             $table->id();
             $table->string('url');
 <<<<<<< HEAD
@@ -35,6 +39,10 @@ class CreateUrlsTable extends Migration
      */
     public function down()
     {
+<<<<<<< HEAD:database/migrations/2020_10_19_022728_create_urls_table.php
         Schema::dropIfExists('urls');
+=======
+        Schema::dropIfExists('colas');
+>>>>>>> vlkw:database/migrations/2020_11_04_160729_create_cola_table.php
     }
 }
