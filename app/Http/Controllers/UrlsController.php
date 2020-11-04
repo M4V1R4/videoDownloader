@@ -53,7 +53,7 @@ class UrlsController extends Controller
         $nuevoUrl->url = $request->url;
         $nuevoUrl->user_id = auth()->user()->id;
         $nuevoUrl->format = $request->format;
-        $nuevoUrl->state = 'En proceso';
+        $nuevoUrl->state = 'Procesado';
         $nuevoUrl->save();
         return back();
 
@@ -89,7 +89,7 @@ class UrlsController extends Controller
      * @param  \App\Urls  $urls
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Urls $urls)
+    public function update(Request $request, Url $urls)
     {
         $model = Url::where('id', $id)->get()[0];
         $model->state = $request->state;
@@ -103,9 +103,10 @@ class UrlsController extends Controller
      * @param  \App\Urls  $urls
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Urls $urls)
+    public function destroy(Url $url)
     {
-        $urls->delete();
-        return back();
+    
+        $url->delete();
+       
     }
 }

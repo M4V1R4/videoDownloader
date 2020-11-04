@@ -27,6 +27,7 @@
                     <button  type="submit"  id='agregar' class="btn btn-primary">Agregar</button>
                 </div>
             </div>
+            </form>
             
 
             <hr>
@@ -39,43 +40,51 @@
                 <th scope="col">State</th>
                 <th scope="col">Format</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
                 </tr>
             </thead>
 
             <tr>
             <tbody>
-                
+            
                 @foreach($urls  as $url)
                 
+               
+                        
 
-                    <td>{{$url->id }}</td>
+                    <td name='id'>{{$url->id }}</td>
 
-                    <td>{{$url->url  }}</td>
+                    <td name='url'>{{$url->url  }}</td>
                     <td>{{$url->state  }}</td>
-                    <td>{{$url->format  }}</td>
-                
+                    <td name='format'>{{$url->format  }}</td>
 
-                </tr>
-                @endforeach
-                <form action="{{ route('urls.destroy',$url->id) }}" method="POST">
-
-                      <button type="button" class="btn btn-success"><i class="fa fa-download"></i></button>
-
+                    <td><form method="POST" class="form-delete" action="{{ route('urls.destroy',$url->id)}}">
                         @csrf
-
                         @method('DELETE')
-
-        
-
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                       
+                    </form>
 
-                </form>
+                    <td><form method="POST" class="form-enviar" action="{{ route('cola.store', ['id' => $url->id,'url' => $url->url,'format' => $url->format])}}">
+                    @csrf
+                    <button type="submit" class="btn btn-success"><i class="fa fa-download"></i></button>
+                       
+                    </form>
+                    </td>
+                
+                        
+                                 
+                   </tr>
+                @endforeach
+                   
+                
             </tbody>
-            </table>
+        </table>
         </div>
     </div>
     <div>
-        {{$urls->links()}}
     </div>
 </div>
 @endsection

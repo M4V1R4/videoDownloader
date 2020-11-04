@@ -22,9 +22,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/descarga/{url,format}', 'ColasController@index')->name('descarga');
+
+//Route::get('/descarga/{url,format}', 'ColasController@index')->name('descarga');
 
 //Route::post('/store','UrlsController@store')->name('store');
 Route::resource('urls','UrlsController');
+Route::resource('cola','ColasController');
 
-Route::get('/', 'UrlsController@index')->name('index');
+//Route::get('/', 'UrlsController@index')->name('index');

@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-require_once(__DIR__ . '/vendor/autoload.php');
+use App\Url;
+Use App;
+use App\Http\Controllers\Auth;
 
 class ColasController extends Controller
 {
-  public function download($url,$format) {
+
+
+  public function store(Request $request ) {
     
     define("RABBITMQ_HOST", "rabbitmq");
     define("RABBITMQ_PORT", 5672);
@@ -36,14 +40,13 @@ class ColasController extends Controller
         $ticket = null
     );
 
-    $v_id=0;
-
         $ViArray = array(
-            'id' => $v_id++,
+            'id' =>$request->id,
             'user_id' =>auth()->user()->id,
-            'url' => $url,
-            'format' => $format
+            'link' => $request->url,
+            'format' => $request->format
         );
+        
         
         $msg = new \PhpAmqpLib\Message\AMQPMessage(
             json_encode($ViArray, JSON_UNESCAPED_SLASHES),
@@ -51,6 +54,6 @@ class ColasController extends Controller
         );
             
         $channel->basic_publish($msg, '', RABBITMQ_QUEUE_NAME);
-        print 'Created' . PHP_EOL;
+        return back();
     }
 }
