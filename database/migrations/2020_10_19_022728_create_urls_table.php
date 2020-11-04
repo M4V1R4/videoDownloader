@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateColaTable extends Migration
+class CreateUrlsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateColaTable extends Migration
      */
     public function up()
     {
-        Schema::create('cola', function (Blueprint $table) {
+        Schema::create('urls', function (Blueprint $table) {
             $table->id();
             $table->string('url');
             $table->string('user_id');
             $table->string('format');
             $table->string('state');
+            
         });
     }
 
@@ -29,6 +30,6 @@ class CreateColaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cola');
+        Schema::dropIfExists('urls');
     }
 }

@@ -107,6 +107,6 @@ class UrlsController extends Controller
     {
     
         $url->delete();
-        return back();
+       
     }
 }
