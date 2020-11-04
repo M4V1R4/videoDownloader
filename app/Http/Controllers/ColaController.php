@@ -105,13 +105,7 @@ class ColaController extends Controller
      */
     public function destroy(Cola $Cola)
     {
-    
-<<<<<<< HEAD:app/Http/Controllers/UrlsController.php
-        $url->delete();
-       
-=======
         $Cola->delete();
         return back();
->>>>>>> vlkw:app/Http/Controllers/ColaController.php
     }
 }
